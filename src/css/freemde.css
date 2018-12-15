@@ -8,6 +8,10 @@
     font: inherit;
     z-index: 1;
     word-wrap: break-word;
+    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+}
+.CodeMirror {
+  line-height: 21px;
 }
 
 .CodeMirror-scroll {
@@ -40,6 +44,7 @@
 }
 
 .editor-toolbar {
+    /* background: #eee; */
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -47,9 +52,9 @@
     -o-user-select: none;
     user-select: none;
     padding: 0 10px;
-    border-top: 1px solid #bbb;
-    border-left: 1px solid #bbb;
-    border-right: 1px solid #bbb;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
@@ -135,7 +140,7 @@
 
 .editor-toolbar button.active,
 .editor-toolbar button:hover {
-    background: #fcfcfc;
+    background: #fff;
     border-color: #95a5a6;
 }
 
@@ -193,6 +198,7 @@
     font-size: 12px;
     color: #959694;
     text-align: right;
+    line-height: 20px;
 }
 
 .editor-statusbar span {
@@ -220,7 +226,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: #fafafa;
+    background: #fff;
     z-index: 7;
     overflow: auto;
     display: none;
@@ -234,7 +240,7 @@
     width: 50%;
     top: 50px;
     right: 0;
-    background: #fafafa;
+    background: #fff;
     z-index: 9;
     overflow: auto;
     display: none;

@@ -1,7 +1,7 @@
 {
-    "name": "easymde",
-    "version": "2.4.1",
-    "description": "A simple, beautiful, and embeddable JavaScript Markdown editor that easy to use. Features include autosaving and spell checking.",
+    "name": "freemde",
+    "version": "0.0.2",
+    "description": "A simple, beautiful, and embeddable JavaScript Markdown editor that easy to use. Features include autosaving and spell checking. Supports any Markdown renderer and paste image now!",
     "keywords": [
         "embeddable",
         "markdown",
@@ -9,11 +9,11 @@
         "javascript",
         "fontawesome"
     ],
-    "main": "./src/js/easymde.js",
+    "main": "./src/js/freemde.js",
     "license": "MIT",
     "author": "Jeroen Akkerman",
     "bugs": {
-        "url": "https://github.com/ionaru/easy-markdown-editor/issues"
+        "url": "https://github.com/yansenlei/free-markdown-editor/issues"
     },
     "dependencies": {
         "codemirror": "^5.40.2",
@@ -34,7 +34,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ionaru/easy-markdown-editor"
+        "url": "https://github.com/yansenlei/free-markdown-editor"
     },
     "scripts": {
         "prepublish": "gulp"

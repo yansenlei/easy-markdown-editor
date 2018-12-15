@@ -28,8 +28,8 @@ function lint() {
 }
 
 function scripts() {
-    return browserify({entries: './src/js/easymde.js', standalone: 'EasyMDE'}).bundle()
-        .pipe(source('easymde.min.js'))
+    return browserify({entries: './src/js/freemde.js', standalone: 'FreeMDE'}).bundle()
+        .pipe(source('freemde.min.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(header(banner, {pkg: pkg}))
@@ -44,9 +44,9 @@ function styles() {
     ];
 
     return gulp.src(css_files)
-        .pipe(concat('easymde.css'))
+        .pipe(concat('freemde.css'))
         .pipe(cleanCSS())
-        .pipe(rename('easymde.min.css'))
+        .pipe(rename('freemde.min.css'))
         .pipe(buffer())
         .pipe(header(banner, {pkg: pkg}))
         .pipe(gulp.dest('./dist/'));

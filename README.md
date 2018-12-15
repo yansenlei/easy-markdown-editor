@@ -1,44 +1,37 @@
-# EasyMDE is a fork of SimpleMDE
+# FreeMDE is a fork of EasyMDE&SimpleMDE
 This repository is a fork of [SimpleMDE, made by Sparksuite](https://github.com/sparksuite/simplemde-markdown-editor/).
 
-I originally made this fork to implement FontAwesome 5 compatibility into SimpleMDE. When that was done I submitted a [pull request](https://github.com/sparksuite/simplemde-markdown-editor/pull/666), which has not been accepted yet. This, and the project being inactive since May 2017, triggered me to make more changes and try to put new life into the project.
-
 Changes include:
-* FontAwesome 5 compatibility
-* Guide button works when editor is in preview mode
-* Links are now `https://` by default
-* Small styling changes
-* Support for Node 8 and beyond
-* Lots of refactored code
-* Links in preview will open in a new tab by default
-
+* Supports any markdown renderer, Default empty renderer.
+* Add Paste Image.
+* Add view render hook.
 My intention is to continue development on this project, improving it and keeping it alive.
 
-[![npm version](https://img.shields.io/npm/v/easymde.svg)](https://www.npmjs.com/package/easymde)
-[![npm version](https://img.shields.io/npm/v/easymde/next.svg)](https://www.npmjs.com/package/easymde/v/next)
-[![Build Status](https://travis-ci.org/Ionaru/easy-markdown-editor.svg?branch=development)](https://travis-ci.org/Ionaru/easy-markdown-editor)
+[![npm version](https://img.shields.io/npm/v/freemde.svg)](https://www.npmjs.com/package/freemde)
+[![npm version](https://img.shields.io/npm/v/freemde/next.svg)](https://www.npmjs.com/package/freemde/v/next)
+[![Build Status](https://travis-ci.org/Ionaru/free-markdown-editor.svg?branch=development)](https://travis-ci.org/Ionaru/free-markdown-editor)
 
-## Install EasyMDE
-Via [npm](https://www.npmjs.com/package/easymde).
+## Install FreeMDE
+Via [npm](https://www.npmjs.com/package/freemde).
 ```
-npm install easymde --save
+npm install freemde --save
 ```
 
 Via the UNPKG CDN.
 ```html
-<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
-<script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/freemde/dist/freemde.min.css">
+<script src="https://unpkg.com/freemde/dist/freemde.min.js"></script>
 ```
 
 ## How to use
 
 #### Loading the editor
 
-After installing and/or importing the module, you can load EasyMDE onto the first TextArea on the webpage.
+After installing and/or importing the module, you can load FreeMDE onto the first TextArea on the webpage.
 ```html
 <textarea></textarea>
 <script>
-var easyMDE = new EasyMDE();
+var freeMDE = new FreeMDE();
 </script>
 ```
 
@@ -46,7 +39,7 @@ Alternatively you can select a specific TextArea, via Javascript.
 ```html
 <textarea id="my-text-area"></textarea>
 <script>
-var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
+var freeMDE = new FreeMDE({element: document.getElementById('my-text-area')});
 </script>
 ```
 
@@ -54,28 +47,28 @@ Or via jQuery.
 ```html
 <textarea id="my-text-area"></textarea>
 <script>
-var easyMDE = new EasyMDE({element: $('#my-text-area')[0]});
+var freeMDE = new FreeMDE({element: $('#my-text-area')[0]});
 </script>
 ```
 
 #### Editor functions
 
-Use EasyMDE.value() to get the content of the editor.
+Use FreeMDE.value() to get the content of the editor.
 ```html
 <script>
-easyMDE.value();
+freeMDE.value();
 </script>
 ```
 
-Use EasyMDE.value(val) to set the content of the editor.
+Use FreeMDE.value(val) to set the content of the editor.
 ```html
 <script>
-easyMDE.value('New input for **EasyMDE**');
+freeMDE.value('New input for **FreeMDE**');
 </script>
 ```
 
 
-Below is the original [README](https://github.com/sparksuite/simplemde-markdown-editor/), rewrite for EasyMDE in progress.
+Below is the original [README](https://github.com/sparksuite/simplemde-markdown-editor/), rewrite for FreeMDE in progress.
 
 # SimpleMDE - Markdown Editor
 A drop-in JavaScript textarea replacement for writing beautiful and understandable Markdown. The WYSIWYG-esque editor allows users who may be less experienced with Markdown to use familiar toolbar buttons and shortcuts. In addition, the syntax is rendered while editing to clearly show the expected result. Headings are larger, emphasized words are italicized, links are underlined, etc. SimpleMDE is one of the first editors to feature both built-in autosaving and spell checking.
@@ -187,7 +180,7 @@ simplemde.value("This text will appear in the editor");
 - **styleSelectedText**: If set to `false`, remove the `CodeMirror-selectedtext` class from selected lines. Defaults to `true`.
 - **syncSideBySidePreviewScroll**: If set to `false`, disable syncing scroll in side by side mode. Defaults to `true`.
 - **tabSize**: If set, customize the tab size. Defaults to `2`.
-- **theme**: Override the theme. Defaults to `easymde`.
+- **theme**: Override the theme. Defaults to `freemde`.
 - **toolbar**: If set to `false`, hide the toolbar. Defaults to the [array of icons](#toolbar-icons).
 - **toolbarTips**: If set to `false`, disable toolbar button tips. Defaults to `true`.
 
