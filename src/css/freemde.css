@@ -276,52 +276,52 @@
     padding: 5px;
 }
 
-.cm-s-easymde .cm-tag {
+.cm-s-freemde .cm-tag {
     color: #63a35c;
 }
 
-.cm-s-easymde .cm-attribute {
+.cm-s-freemde .cm-attribute {
     color: #795da3;
 }
 
-.cm-s-easymde .cm-string {
+.cm-s-freemde .cm-string {
     color: #183691;
 }
 
-.cm-s-easymde .cm-header-1 {
+.cm-s-freemde .cm-header-1 {
     font-size: 200%;
     line-height: 200%;
 }
 
-.cm-s-easymde .cm-header-2 {
+.cm-s-freemde .cm-header-2 {
     font-size: 160%;
     line-height: 160%;
 }
 
-.cm-s-easymde .cm-header-3 {
+.cm-s-freemde .cm-header-3 {
     font-size: 125%;
     line-height: 125%;
 }
 
-.cm-s-easymde .cm-header-4 {
+.cm-s-freemde .cm-header-4 {
     font-size: 110%;
     line-height: 110%;
 }
 
-.cm-s-easymde .cm-comment {
+.cm-s-freemde .cm-comment {
     background: rgba(0, 0, 0, .05);
     border-radius: 2px;
 }
 
-.cm-s-easymde .cm-link {
+.cm-s-freemde .cm-link {
     color: #7f8c8d;
 }
 
-.cm-s-easymde .cm-url {
+.cm-s-freemde .cm-url {
     color: #aab2b3;
 }
 
-.cm-s-easymde .cm-quote {
+.cm-s-freemde .cm-quote {
     color: #7f8c8d;
     font-style: italic;
 }
