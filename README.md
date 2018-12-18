@@ -9,7 +9,7 @@ My intention is to continue development on this project, improving it and keepin
 
 [![npm version](https://img.shields.io/npm/v/freemde.svg)](https://www.npmjs.com/package/freemde)
 [![npm version](https://img.shields.io/npm/v/freemde/next.svg)](https://www.npmjs.com/package/freemde/v/next)
-[![Build Status](https://travis-ci.org/Ionaru/free-markdown-editor.svg?branch=development)](https://travis-ci.org/Ionaru/free-markdown-editor)
+[![Build Status](https://travis-ci.org/yansenlei/free-markdown-editor.svg?branch=development)](https://travis-ci.org/yansenlei/free-markdown-editor)
 
 ## Install FreeMDE
 Via [npm](https://www.npmjs.com/package/freemde).
