@@ -1,6 +1,6 @@
 {
     "name": "freemde",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A simple, beautiful, and embeddable JavaScript Markdown editor that easy to use. Features include autosaving and spell checking. Supports any Markdown renderer and paste image now!",
     "keywords": [
         "embeddable",

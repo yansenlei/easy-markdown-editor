@@ -74,6 +74,14 @@
     margin-top: 8px
 }
 
+.editor-toolbar.fullscreen:before {
+    display: none
+}
+
+.editor-toolbar.fullscreen:after {
+    display: none
+}
+
 .editor-toolbar.fullscreen {
     width: 100%;
     height: 50px;
