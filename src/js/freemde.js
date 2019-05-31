@@ -15,7 +15,7 @@ require('./codemirror/inline-attachment.js');
 require('./codemirror/codemirror-4.inline-attachment.js');
 var CodeMirrorSpellChecker = require('codemirror-spell-checker');
 var marked = require('marked');
-var { debounce } = require('lodash');
+var _ = require('lodash');
 
 
 // Some variables
@@ -1440,17 +1440,18 @@ function FreeMDE(options) {
 
     // Add default preview rendering function
     if (!options.previewRender) {
-        let self = this
+        var self = this;
         options.previewRender = function (plainText) {
             // Note: "this" refers to the options object
             return this.parent.markdown(plainText);
         };
-        options.debouncePreview = debounce.call(this, function (editor, preview) {
+        options.debouncePreview = _.debounce.call(this, function (editor, preview) {
             // console.log('self', self, this)
-            let render = editor.options.previewRender
-            let val = editor.value()
-            preview.innerHTML = FreeMDE.prototype.markdown.call(self, val)
-        }, 1000)        
+            // var render = editor.options.previewRender;
+            var val = editor.value();
+            preview.innerHTML = FreeMDE.prototype.markdown.call(self, val);
+            runViews(editor, preview);
+        }, 1000);
     }
 
 
