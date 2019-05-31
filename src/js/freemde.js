@@ -15,6 +15,7 @@ require('./codemirror/inline-attachment.js');
 require('./codemirror/codemirror-4.inline-attachment.js');
 var CodeMirrorSpellChecker = require('codemirror-spell-checker');
 var marked = require('marked');
+var { debounce } = require('lodash');
 
 
 // Some variables
@@ -768,8 +769,10 @@ function toggleSideBySide(editor) {
     }
 
     var sideBySideRenderingFunction = function () {
-        preview.innerHTML = editor.options.previewRender(editor.value(), preview);
-		runViews(editor, preview);
+        // preview.innerHTML = editor.options.previewRender(editor.value(), preview);
+        editor.options.debouncePreview(editor, preview);
+        // FreeMDE.prototype.debouncePreview.call(this, editor.options.previewRender, editor.value(), preview);
+		// runViews(editor, preview);
     };
 
     if (!cm.sideBySideRenderingFunction) {
@@ -822,8 +825,10 @@ function togglePreview(editor) {
             toolbar_div.className += ' disabled-for-preview';
         }
     }
-    preview.innerHTML = editor.options.previewRender(editor.value(), preview);
-    runViews(editor, preview);
+    // preview.innerHTML = editor.options.previewRender(editor.value(), preview);
+    editor.options.debouncePreview(editor, preview);
+    // FreeMDE.prototype.debouncePreview(editor.options.previewRender, editor.value(), preview);
+    // runViews(editor, preview);
 
     // Turn off side by side if needed
     var sidebyside = cm.getWrapperElement().nextSibling;
@@ -1435,10 +1440,17 @@ function FreeMDE(options) {
 
     // Add default preview rendering function
     if (!options.previewRender) {
+        let self = this
         options.previewRender = function (plainText) {
             // Note: "this" refers to the options object
             return this.parent.markdown(plainText);
         };
+        options.debouncePreview = debounce.call(this, function (editor, preview) {
+            // console.log('self', self, this)
+            let render = editor.options.previewRender
+            let val = editor.value()
+            preview.innerHTML = FreeMDE.prototype.markdown.call(self, val)
+        }, 1000)        
     }
 
 
@@ -1486,11 +1498,11 @@ function FreeMDE(options) {
         this.value(options.initialValue);
     }
 }
-
 /**
  * Default markdown render.
  */
 FreeMDE.prototype.markdown = function (text) {
+    // console.log('markdown', this)
     if (typeof this.options.markdown === 'function') {
         return this.options.markdown(
             text,
@@ -1539,6 +1551,8 @@ FreeMDE.prototype.markdown = function (text) {
         console.log('FreeMDE: Error. No markdown renderer was found.');
     }
 };
+// FreeMDE.prototype.markdown = debounce(FreeMDE.prototype.markdownRender, 800, {leading:false, trailing: true, maxWait: 1500})
+// FreeMDE.prototype.markdown = throttle(FreeMDE.prototype.markdownRender, 1000)
 
 /**
  * Render editor to the given element.
@@ -2036,8 +2050,10 @@ FreeMDE.prototype.value = function (val) {
         if (this.isPreviewActive()) {
             var wrapper = cm.getWrapperElement();
             var preview = wrapper.lastChild;
-            preview.innerHTML = this.options.previewRender(val, preview);
-            runViews(this, preview);
+            // preview.innerHTML = this.options.previewRender(val, preview);
+            this.options.debouncePreview(this, preview);
+            // FreeMDE.prototype.debouncePreview(this.options.previewRender, val, preview);
+            // runViews(this, preview);
         }
         return this;
     }
